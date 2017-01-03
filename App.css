@@ -1,4 +1,4 @@
-.App {
+.Welcome {
   text-align: center;
 }
 
@@ -18,6 +18,29 @@
   font-size: large;
 }
 
+.IconsDiv{
+  margin-left:0px;
+}
+
+div.iconsLeft{
+  margin-left:0px;
+  padding:0px;
+}
+.glyphicon:hover{
+  background-color:red;
+}
+.CompTitle{
+  margin-top:40px;
+  font-size: 35px;
+}
+.VideosDiv, .ContactParagraphs, .PicturesParagraphs, .CalendarParagraphs{
+  font-size:25px;
+}
+
+.videos-paragraphs{
+  cursor: grab;
+  
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

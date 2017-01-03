@@ -55,7 +55,7 @@ h1{
   font-family: 'Lobster';
   font-size: 70px;
   vertical-align: middle;
-  background-color: $mainBackgroundColor;
+  
   color:$mainTitleColor;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -93,12 +93,12 @@ div.row.footer{
 .iconsLeft, .containerUnderSecondaryTitle, .iconsRight{
 	display:inline-block;
 }
-.iconsLeft{
-  margin-left: 1%;  
-}
+
 .iconVideo{
 	margin-top:10%;  
 }
+
+
 
 #Videos{
    z-index: -100;
@@ -200,9 +200,9 @@ div.row.footer{
 
     }
 }
-
-
-
+.mainTitle{
+  background-color: $mainBackgroundColor;
+}
 
 .secondaryTitle-phone-size {
 	@include for-phone-up{
@@ -260,7 +260,8 @@ div.row.footer{
   height: 200px;
   overflow: auto;
 }
-.contact-paragragraphs,.dynamic-paragraphs-text-sizes{
+.ContactParagraphs,.dynamic-paragraphs-text-sizes{
+
   margin-top: 1%;
   @include for-phone-only{
     font-size: 18px;

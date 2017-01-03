@@ -33,7 +33,6 @@ h1 {
   font-family: 'Lobster';
   font-size: 70px;
   vertical-align: middle;
-  background-color: white;
   color: #bb1000;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -69,9 +68,6 @@ div.row.footer {
 
 .iconsLeft, .containerUnderSecondaryTitle, .iconsRight {
   display: inline-block; }
-
-.iconsLeft {
-  margin-left: 1%; }
 
 .iconVideo {
   margin-top: 10%; }
@@ -155,6 +151,9 @@ div.row.footer {
   .tablet-portait-only {
     background: green; } }
 
+.mainTitle {
+  background-color: white; }
+
 @media (max-width: 400px) {
   .secondaryTitle-phone-size {
     font-size: 18px; } }
@@ -203,19 +202,19 @@ div.row.footer {
   height: 200px;
   overflow: auto; }
 
-.contact-paragragraphs, .dynamic-paragraphs-text-sizes {
+.ContactParagraphs, .dynamic-paragraphs-text-sizes {
   margin-top: 1%; }
   @media (min-width: 400px) and (max-width: 599px) {
-    .contact-paragragraphs, .dynamic-paragraphs-text-sizes {
+    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
       font-size: 18px; } }
   @media (max-width: 400px) {
-    .contact-paragragraphs, .dynamic-paragraphs-text-sizes {
+    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
       font-size: 18px; } }
   @media (min-width: 600px) and (max-width: 899px) {
-    .contact-paragragraphs, .dynamic-paragraphs-text-sizes {
+    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
       font-size: 20px; } }
   @media (min-width: 900px) and (max-width: 1199px) {
-    .contact-paragragraphs, .dynamic-paragraphs-text-sizes {
+    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
       font-size: 22px; } }
 
 .dynamic-paragraphs-text-sizes {
