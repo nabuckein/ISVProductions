@@ -7,8 +7,13 @@ class Videos extends Component {
 
 	render() {
 	    return (
-		    <div className="VideosDiv">
-		 		<p className="CompTitle">Videos</p>		      	
+		    <div>
+		    	<div className="CompTitle" >
+		 			<p id="componentTitle">Videos</p>	
+		 		</div>
+		 		<div className="VideosDiv">
+
+		 		</div>	      	
 		    </div>
 	    );
   	}

@@ -48,6 +48,9 @@ class Dynamic extends React.Component {
 		  		}		  		
   			}  
 
+  			var iconClicked = document.getElementById('componentTitle');
+    			iconClicked.classList.add("iconClickedAnimation");
+
   			
   		}
 
@@ -56,6 +59,9 @@ class Dynamic extends React.Component {
 			passedDailyMotionResponseList = this.props.dailyMotionResponse.list;
 
 			if(this.props.componentToShow === 'Video'){
+				
+
+
 				return(
 					<Videos/>
 		      	);

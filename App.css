@@ -26,6 +26,9 @@ div.iconsLeft{
   margin-left:0px;
   padding:0px;
 }
+.iconClickedAnimation{
+  animation: Clicked-Animation 2s infinite;
+}
 .glyphicon:hover{
   background-color:red;
 }
@@ -33,15 +36,53 @@ div.iconsLeft{
   margin-top:40px;
   font-size: 35px;
 }
+
 .VideosDiv, .ContactParagraphs, .PicturesParagraphs, .CalendarParagraphs{
   font-size:25px;
 }
 
+.VideosDiv{
+  margin-top: 40px;
+}
+p#componentTitle{
+  height: 30px;
+}
+
 .videos-paragraphs{
   cursor: grab;
-  
+
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@-webkit-keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+@-moz-keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+@-o-keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+@keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+

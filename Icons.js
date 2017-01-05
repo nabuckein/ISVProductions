@@ -32,8 +32,8 @@ class Icons extends Component {
   }
 
   handleVideoClick = (e) => {
-    this.setState({activeComponent:'Video'}); 
-    
+    this.setState({activeComponent:'Video'});    
+
   }
 
   handleCalendarClick = (e) => {
