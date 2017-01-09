@@ -33,12 +33,47 @@ div.iconsLeft{
   background-color:red;
 }
 .CompTitle{
-  margin-top:40px;
+  
   font-size: 35px;
 }
+.initialHide{
+  opacity: 0.0;
+}
+.slideMenuToLeft{
+  animation: slideToLeft 1s;
+  animation-fill-mode: forwards;
+}
+.slideMenuFromLeft{
+  animation: slideFromLeft 1s;
+  animation-fill-mode: forwards;
+}
+.hideIconsWithOpacity{
+  animation: hideWithOpacity 1s;
+  animation-fill-mode: forwards;
 
-.VideosDiv, .ContactParagraphs, .PicturesParagraphs, .CalendarParagraphs{
+}
+.showIconsWithOpacity{
+  animation: showWithOpacity 1s;  
+}
+.slideAndHide{
+  animation: slideToRight 1s, hideWithOpacity 1s;
+  animation-fill-mode: forwards;
+}
+
+p#menuTab{
+  font-size:20px;
+  position: absolute;
+  margin-left: -20px;
+  padding-top: 100px;
+  border: solid 1px white;
+  height:400px;
+  width:30px;
+  word-wrap: break-word;
+}
+
+.WelcomeDiv, .VideosDiv, .ContactDiv, .PicturesDiv, .CalendarDiv{
   font-size:25px;
+  margin-top:40px;
 }
 
 .VideosDiv{
@@ -84,5 +119,27 @@ p#componentTitle{
   50%  { font-size: 105%; }
  
   100% { font-size: 100%; }
+}
+
+@keyframes slideToLeft {
+  from { transform: translate(0px,0px); }
+  to { transform: translate(-500px,0px); }
+}
+@keyframes slideFromLeft {
+  from { transform: translate(-500px,0px); }
+  to { transform: translate(0px,0px); }
+}
+@keyframes slideToRight {
+  from { transform: translate(0px,0px); }
+  to { transform: translate(200px,0px); }
+}
+
+@keyframes hideWithOpacity {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+@keyframes showWithOpacity {
+  from { opacity: 0.0; }
+  to { opacity: 1.0; }
 }
 

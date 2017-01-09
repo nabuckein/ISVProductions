@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import './App.css';
 import './index.css';
+import Welcome from './Welcome.js';
 import Contact from './Contact.js';
 import Calendar from './Calendar.js';
 import Pictures from './Pictures.js';
@@ -9,11 +10,11 @@ import Videos from './Videos.js';
 //import Icons from './Icons.js';
 
 var videosId = [];
-var passedDailyMotionResponse = {};
+//var passedDailyMotionResponse = {};
 var passedDailyMotionResponseList = [];
 
 
-class Dynamic extends React.Component {
+class Dynamic extends Component {
 
 		static defaultProps = {
 			componentToShow: "Welcome",
@@ -88,9 +89,7 @@ class Dynamic extends React.Component {
 	    	else if(this.props.componentToShow === "Welcome"){
 	    		videosId = [];
 			    return (
-		       		<div className="WelcomeDiv row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		        		<h2 className="dynamic-title-text-sizes"> Click on the icons to look at example videos or pictures of our work. At I. S. Productions we are always happy to show you what we can do.</h2>
-		      	 	</div>
+		       		<Welcome/>
 		    	);
 			}
 		}

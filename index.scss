@@ -76,6 +76,7 @@ div.row.footer{
   background-color: white;
   color:red;  
 }
+
 .container{
 	width:100%;
   height: auto;
@@ -260,7 +261,7 @@ div.row.footer{
   height: 200px;
   overflow: auto;
 }
-.ContactParagraphs,.dynamic-paragraphs-text-sizes{
+.dynamic-paragraphs-text-sizes{
 
   margin-top: 1%;
   @include for-phone-only{

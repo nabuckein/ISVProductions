@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import App from './App.js';
+import Menu from './Menu.js';
 import Dynamic from './Dynamic.js';
 
 var dailyMotionResponse = {test:"test"};
@@ -14,7 +14,7 @@ class Icons extends Component {
   state = {
     activeComponent: 'Welcome',
     show: true
-  }  
+  } 
 
   componentWillMount(){
     var xhttp = new XMLHttpRequest();
@@ -29,6 +29,64 @@ class Icons extends Component {
     xhttp.open("GET",'https://api.dailymotion.com/user/hd_sz/videos',true);
     xhttp.responseType = "json";
     xhttp.send();         
+  }
+
+  handleMenuClick = (e) =>{
+
+    var menu = document.getElementById('menu');
+    var collapseIcons = document.getElementById('collapseIcons');
+    var iconVideoClass = document.getElementsByClassName('iconVideo');
+    //console.log(iconVideoClass[1]);
+    var videosIcon = document.getElementById('VideosIcon');
+    var calendarIcon = document.getElementById('CalendarIcon');
+    var picturesIcon = document.getElementById('PicturesIcon');
+    var contactIcon = document.getElementById('ContactIcon');
+
+
+    menu.classList.remove('slideMenuFromLeft');
+    menu.classList.add('slideMenuToLeft');
+    
+    for (var n=0; n<=iconVideoClass.length-1; n++){
+      if(iconVideoClass[n].classList.contains('initialHide')){
+        iconVideoClass[n].classList.remove('initialHide')
+        iconVideoClass[n].classList.add('showIconsWithOpacity');
+      }      
+      else{
+        iconVideoClass[n].classList.remove('hideIconsWithOpacity');
+      }
+    }
+    
+
+  }
+
+  handleCollapseClick = (e) =>{
+
+    var menu = document.getElementById('menu');
+    var collapseIcons = document.getElementById('collapseIcons');
+    var iconVideoClass = document.getElementsByClassName('iconVideo');
+    var videosIcon = document.getElementById('VideosIcon');
+    var calendarIcon = document.getElementById('CalendarIcon');
+    var picturesIcon = document.getElementById('PicturesIcon');
+    var contactIcon = document.getElementById('ContactIcon');
+    console.log(iconVideoClass);
+
+    menu.classList.remove('slideMenuToLeft');
+    menu.classList.add('slideMenuFromLeft');
+    
+    for (var i=0; i<=iconVideoClass.length-1; i++){
+      //if(iconVideoClass[i].classList.contains('showIconsWithOpacity')){
+
+        iconVideoClass[i].classList.remove('showIconsWithOpacity')
+        iconVideoClass[i].classList.add('hideIconsWithOpacity');
+
+
+      /*}      
+      else{
+        iconVideoClass[i].classList.remove('hideIconsWithOpacity');
+      }*/
+    }
+   
+
   }
 
   handleVideoClick = (e) => {
@@ -53,27 +111,34 @@ class Icons extends Component {
       
     return (      
       <div className="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div className="IconsDiv row col-lg-2 col-md-2 col-sm-2 col-xs-2">          
-          <div className="iconVideo" id="VideosIcon">            
+        <div id="menu" className="MenuDiv text-center" onClick={this.handleMenuClick}>
+          <Menu />
+        </div>
+
+        <div id="icons" className="IconsDiv row col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">          
+          <div className="iconVideo initialHide " id="VideosIcon">            
             <span className="glyphicon glyphicon-facetime-video glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" id="testID" onClick={this.handleVideoClick}></span>
             
           </div>
 
-          <div className="iconVideo" id="CalendarIcon">
+          <div className="iconVideo initialHide" id="CalendarIcon">
             <span className="glyphicon glyphicon-calendar glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleCalendarClick}></span>
           </div>  
 
-          <div className="iconVideo" id="PicturesIcon">
+          <div className="iconVideo initialHide" id="PicturesIcon">
             <span className="glyphicon glyphicon-picture glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handlePicturesClick}></span>
           </div>  
 
-          <div className="iconVideo" id="ContactIcon">
+          <div className="iconVideo initialHide" id="ContactIcon">
             <span className="glyphicon glyphicon-envelope glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleContactClick}></span>
           </div> 
+          <div>
+            <p className="iconVideo initialHide" id="collapseIcons" onClick={this.handleCollapseClick}> Collapse </p>
+          </div>
         </div>     
 
-        <div className="DynamicDiv row col-lg-9 col-md-9 col-sm-9 col-xs-9">
-          <Dynamic componentToShow={this.state.activeComponent} dailyMotionResponse={dailyMotionResponse} testText="SADFDSAFDSAFDSAFDSAFDSAFDSAFDSAFDSAFDSAFDS"/>
+        <div className="DynamicDiv row col-lg-10 col-md-10 col-sm-10 col-xs-10 text-center">
+          <Dynamic componentToShow={this.state.activeComponent} dailyMotionResponse={dailyMotionResponse}/>
         </div>
 
       </div>
@@ -84,6 +149,7 @@ class Icons extends Component {
 }
 
 export default Icons;
+
 
 ReactDOM.render(
   <Icons />,
