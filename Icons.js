@@ -34,13 +34,9 @@ class Icons extends Component {
   handleMenuClick = (e) =>{
 
     var menu = document.getElementById('menu');
-    var collapseIcons = document.getElementById('collapseIcons');
     var iconVideoClass = document.getElementsByClassName('iconVideo');
     //console.log(iconVideoClass[1]);
-    var videosIcon = document.getElementById('VideosIcon');
-    var calendarIcon = document.getElementById('CalendarIcon');
-    var picturesIcon = document.getElementById('PicturesIcon');
-    var contactIcon = document.getElementById('ContactIcon');
+   
 
 
     menu.classList.remove('slideMenuFromLeft');
@@ -62,13 +58,8 @@ class Icons extends Component {
   handleCollapseClick = (e) =>{
 
     var menu = document.getElementById('menu');
-    var collapseIcons = document.getElementById('collapseIcons');
     var iconVideoClass = document.getElementsByClassName('iconVideo');
-    var videosIcon = document.getElementById('VideosIcon');
-    var calendarIcon = document.getElementById('CalendarIcon');
-    var picturesIcon = document.getElementById('PicturesIcon');
-    var contactIcon = document.getElementById('ContactIcon');
-    console.log(iconVideoClass);
+    
 
     menu.classList.remove('slideMenuToLeft');
     menu.classList.add('slideMenuFromLeft');
