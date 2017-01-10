@@ -11,6 +11,13 @@ class Icons extends Component {
 
   //constructor(props, context) {   //getInitialState() deprecated in ECS6
     //super(props, context);
+  //constructor(props) {
+   //super(props);
+    //this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    //this.handleVideoHover = this.handleVideoHover.bind(this);
+  //}
   state = {
     activeComponent: 'Welcome',
     show: true
@@ -84,6 +91,13 @@ class Icons extends Component {
     this.setState({activeComponent:'Video'});    
 
   }
+  handleVideoMouseEnter = () => {
+    //e.preventDefault();
+    console.log("Mouse ENTERED!");
+  }
+  handleVideoMouseLeave = () => {
+    console.log("Mouse LEFT!");
+  }
 
   handleCalendarClick = (e) => {
     this.setState({activeComponent:'Calendar'});
@@ -102,26 +116,26 @@ class Icons extends Component {
       
     return (      
       <div className="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div id="menu" className="MenuDiv text-center" onClick={this.handleMenuClick}>
+        {/*<div id="menu" className="MenuDiv text-center" onClick={this.handleMenuClick}>
           <Menu />
-        </div>
+        </div>*/}
 
         <div id="icons" className="IconsDiv row col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">          
-          <div className="iconVideo initialHide " id="VideosIcon">            
-            <span className="glyphicon glyphicon-facetime-video glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" id="testID" onClick={this.handleVideoClick}></span>
+          <div className="iconVideo  " id="VideosIcon" onMouseEnter={this.handleVideoMouseEnter} onMouseLeave={this.handleVideoMouseLeave}>            
+            <h1 className="videoH1" aria-hidden="true" id="testID" onClick={this.handleVideoClick}>VIDEOS</h1>
             
           </div>
 
-          <div className="iconVideo initialHide" id="CalendarIcon">
-            <span className="glyphicon glyphicon-calendar glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleCalendarClick}></span>
+          <div className="iconVideo " id="CalendarIcon">
+            <span className="glyphicon glyphicon-calendar glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleCalendarClick}>CALENDAR</span>
           </div>  
 
-          <div className="iconVideo initialHide" id="PicturesIcon">
-            <span className="glyphicon glyphicon-picture glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handlePicturesClick}></span>
+          <div className="iconVideo " id="PicturesIcon">
+            <span className="glyphicon glyphicon-picture glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handlePicturesClick}>PICTURES</span>
           </div>  
 
-          <div className="iconVideo initialHide" id="ContactIcon">
-            <span className="glyphicon glyphicon-envelope glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleContactClick}></span>
+          <div className="iconVideo " id="ContactIcon">
+            <span className="glyphicon glyphicon-envelope glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleContactClick}>CONTACTS</span>
           </div> 
           <div>
             <p className="iconVideo initialHide" id="collapseIcons" onClick={this.handleCollapseClick}> Collapse </p>

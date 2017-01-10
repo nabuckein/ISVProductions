@@ -72,6 +72,23 @@ div.row.footer {
 .iconVideo {
   margin-top: 10%; }
 
+.videoH1 {
+  font-family: "Ranga";
+  font-size: 30px;
+  color: white;
+  border: solid 1px white;
+  border-right: solid 20px white;
+  text-align: right;
+  padding-right: 20px;
+  width: 400px;
+  animation: TabExpansion 3s;
+  animation-fill-mode: forwards; }
+
+@keyframes TabExpansion {
+  from {
+    width: 0px; }
+  to {
+    width: 400px; } }
 #Videos {
   z-index: -100;
   position: absolute; }
@@ -106,14 +123,15 @@ div.row.footer {
   border-width: 2px; }
 
 .glyphicon {
-  font-size: 80px;
+  font-size: 30px;
+  font-family: 'Ranga';
   border: solid 2px;
   border-radius: 10px;
   padding: 6px; }
 
 @media (min-width: 600px) and (max-width: 899px) {
   .glyphicon-tablet-portrait {
-    font-size: 40px; } }
+    font-size: 30px; } }
 
 @media (min-width: 400px) and (max-width: 599px) {
   .glyphicon-phone-only {
@@ -202,19 +220,19 @@ div.row.footer {
   height: 200px;
   overflow: auto; }
 
-.ContactParagraphs, .dynamic-paragraphs-text-sizes {
+.dynamic-paragraphs-text-sizes {
   margin-top: 1%; }
   @media (min-width: 400px) and (max-width: 599px) {
-    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
+    .dynamic-paragraphs-text-sizes {
       font-size: 18px; } }
   @media (max-width: 400px) {
-    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
+    .dynamic-paragraphs-text-sizes {
       font-size: 18px; } }
   @media (min-width: 600px) and (max-width: 899px) {
-    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
+    .dynamic-paragraphs-text-sizes {
       font-size: 20px; } }
   @media (min-width: 900px) and (max-width: 1199px) {
-    .ContactParagraphs, .dynamic-paragraphs-text-sizes {
+    .dynamic-paragraphs-text-sizes {
       font-size: 22px; } }
 
 .dynamic-paragraphs-text-sizes {

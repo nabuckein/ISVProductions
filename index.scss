@@ -98,7 +98,23 @@ div.row.footer{
 .iconVideo{
 	margin-top:10%;  
 }
+.videoH1{
+  font-family: "Ranga";
+  font-size: 30px;
+  color:white;
+  border: solid 1px white;
+  border-right: solid 20px white;
+  text-align: right;
+  padding-right: 20px;
+  width:400px;
+  animation: TabExpansion 3s;
+  animation-fill-mode: forwards;
 
+}
+@keyframes TabExpansion {
+  from { width: 0px; }
+  to { width:400px; }
+}
 
 
 #Videos{
@@ -140,14 +156,15 @@ div.row.footer{
 }
 
 .glyphicon{
-	font-size:80px;
+	font-size:30px;
+  font-family: 'Ranga';
   border: solid 2px;
   border-radius: 10px;
   padding: 6px;
 }
 .glyphicon-tablet-portrait{
 	@include for-tablet-portrait-only{
-		font-size:40px;
+		font-size:30px;
 	}
 }
 .glyphicon-phone-only{
