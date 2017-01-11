@@ -91,13 +91,25 @@ class Icons extends Component {
     this.setState({activeComponent:'Video'});    
 
   }
-  handleVideoMouseEnter = () => {
-    //e.preventDefault();
-    console.log("Mouse ENTERED!");
+  handleVideoMouseEnter = (e) => {
+    var iconID = e.target.id;
+    var elementHovered = document.getElementById(iconID);
+    if(!elementHovered.classList.contains('iconsMouseEnter')){
+      elementHovered.classList.add("iconsMouseEnter");
+      elementHovered.classList.remove("iconsMouseLeave");
+    }
   }
-  handleVideoMouseLeave = () => {
-    console.log("Mouse LEFT!");
+
+  handleVideoMouseLeave = (e) => {
+    var iconID = e.target.id;
+    var elementHovered = document.getElementById(iconID);
+    if(!elementHovered.classList.contains('iconsMouseLeave')){
+      elementHovered.classList.add("iconsMouseLeave");
+      elementHovered.classList.remove("iconsMouseEnter");
+    }
   }
+    
+  
 
   handleCalendarClick = (e) => {
     this.setState({activeComponent:'Calendar'});
@@ -122,20 +134,20 @@ class Icons extends Component {
 
         <div id="icons" className="IconsDiv row col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center">          
           <div className="iconVideo  " id="VideosIcon" onMouseEnter={this.handleVideoMouseEnter} onMouseLeave={this.handleVideoMouseLeave}>            
-            <h1 className="videoH1" aria-hidden="true" id="testID" onClick={this.handleVideoClick}>VIDEOS</h1>
+            <h1 className="iconsH1" aria-hidden="true" id="videoIcon" onClick={this.handleVideoClick}>VIDEOS</h1>
             
           </div>
 
-          <div className="iconVideo " id="CalendarIcon">
-            <span className="glyphicon glyphicon-calendar glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleCalendarClick}>CALENDAR</span>
+          <div className="iconVideo " id="CalendarIcon" onMouseEnter={this.handleVideoMouseEnter} onMouseLeave={this.handleVideoMouseLeave}>
+            <h1 className="iconsH1" aria-hidden="true" id="calendarIcon" onClick={this.handleCalendarClick}>CALENDAR</h1>
           </div>  
 
-          <div className="iconVideo " id="PicturesIcon">
-            <span className="glyphicon glyphicon-picture glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handlePicturesClick}>PICTURES</span>
+          <div className="iconVideo " id="PicturesIcon" onMouseEnter={this.handleVideoMouseEnter} onMouseLeave={this.handleVideoMouseLeave}>
+            <h1 className="iconsH1" aria-hidden="true" id="picturesIcon" onClick={this.handlePicturesClick}>PICTURES</h1>
           </div>  
 
-          <div className="iconVideo " id="ContactIcon">
-            <span className="glyphicon glyphicon-envelope glyphicon-tablet-portrait glyphicon-phone-only" aria-hidden="true" onClick={this.handleContactClick}>CONTACTS</span>
+          <div className="iconVideo " id="ContactIcon" onMouseEnter={this.handleVideoMouseEnter} onMouseLeave={this.handleVideoMouseLeave}>
+            <h1 className="iconsH1" aria-hidden="true" id="contactIcon" onClick={this.handleContactClick}>CONTACTS</h1>
           </div> 
           <div>
             <p className="iconVideo initialHide" id="collapseIcons" onClick={this.handleCollapseClick}> Collapse </p>

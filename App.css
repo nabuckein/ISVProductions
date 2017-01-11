@@ -18,6 +18,10 @@
   font-size: large;
 }
 
+#icons{
+  margin-left: 0;
+  padding-left: -100px;
+}
 .IconsDiv{
   margin-left:0px;
 }

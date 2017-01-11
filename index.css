@@ -49,6 +49,10 @@ video {
   z-index: -99;
   left: 0; }
 
+.row {
+  margin: 0;
+  padding: 0; }
+
 div.row.footer {
   background-color: white;
   color: red; }
@@ -70,9 +74,10 @@ div.row.footer {
   display: inline-block; }
 
 .iconVideo {
-  margin-top: 10%; }
+  margin-top: 10%;
+  margin-left: -300px; }
 
-.videoH1 {
+.iconsH1 {
   font-family: "Ranga";
   font-size: 30px;
   color: white;
@@ -80,15 +85,26 @@ div.row.footer {
   border-right: solid 20px white;
   text-align: right;
   padding-right: 20px;
-  width: 400px;
-  animation: TabExpansion 3s;
+  width: 320px; }
+
+.iconsMouseEnter {
+  animation: TabExpansion 0.25s;
+  animation-fill-mode: forwards; }
+
+.iconsMouseLeave {
+  animation: TabContraction 0.25s;
   animation-fill-mode: forwards; }
 
 @keyframes TabExpansion {
   from {
-    width: 0px; }
+    width: 300px; }
   to {
-    width: 400px; } }
+    width: 450px; } }
+@keyframes TabContraction {
+  from {
+    width: 450px; }
+  to {
+    width: 320px; } }
 #Videos {
   z-index: -100;
   position: absolute; }
