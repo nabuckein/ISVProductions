@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 	
 class Welcome extends Component {
-  render() {
+
+	componentDidMount(){
+		
+	}
+  	render() {
+  		
 	    return (
 	    	<div className="text-center">
 		    	<div className="CompTitle" >

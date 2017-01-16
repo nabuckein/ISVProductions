@@ -37,7 +37,13 @@ h1 {
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 60px; }
+  @media (max-width: 400px) {
+    h1 {
+      margin-bottom: 0; } }
+  @media (min-width: 400px) and (max-width: 599px) {
+    h1 {
+      margin-bottom: 0; } }
 
 p {
   padding: 10px;
@@ -83,13 +89,19 @@ div.row.footer {
   color: white;
   border: solid 1px white;
   border-right: solid 20px white;
+  border-radius: 5px;
   text-align: right;
   padding-right: 20px;
-  width: 320px; }
+  width: 320px;
+  height: 95px; }
 
 .iconsMouseEnter {
   animation: TabExpansion 0.25s;
-  animation-fill-mode: forwards; }
+  animation-fill-mode: forwards;
+  /*@include for-phone-up{
+    animation: TabExpansion-phone-up 0.25s;
+    animation-fill-mode: forwards;
+  }*/ }
 
 .iconsMouseLeave {
   animation: TabContraction 0.25s;
@@ -100,6 +112,11 @@ div.row.footer {
     width: 300px; }
   to {
     width: 450px; } }
+@keyframes TabExpansion-phone-up {
+  from {
+    width: 300px; }
+  to {
+    width: 365px; } }
 @keyframes TabContraction {
   from {
     width: 450px; }
@@ -108,6 +125,15 @@ div.row.footer {
 #Videos {
   z-index: -100;
   position: absolute; }
+
+.videos-paragraphs {
+  cursor: grab; }
+  @media (max-width: 400px) {
+    .videos-paragraphs {
+      font-size: 14px; } }
+  @media (min-width: 400px) and (max-width: 599px) {
+    .videos-paragraphs {
+      font-size: 18px; } }
 
 #Calendar {
   z-index: -100;
@@ -137,13 +163,6 @@ div.row.footer {
   border: solid;
   border-radius: 300px;
   border-width: 2px; }
-
-.glyphicon {
-  font-size: 30px;
-  font-family: 'Ranga';
-  border: solid 2px;
-  border-radius: 10px;
-  padding: 6px; }
 
 @media (min-width: 600px) and (max-width: 899px) {
   .glyphicon-tablet-portrait {

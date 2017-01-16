@@ -25,6 +25,10 @@
 .IconsDiv{
   margin-left:0px;
 }
+.PicturesDiv{
+  max-height: 50%;
+  max-width: 20%;  
+}
 
 div.iconsLeft{
   margin-left:0px;
@@ -33,9 +37,7 @@ div.iconsLeft{
 .iconClickedAnimation{
   animation: Clicked-Animation 2s infinite;
 }
-.glyphicon:hover{
-  background-color:red;
-}
+
 .CompTitle{
   
   font-size: 35px;
@@ -80,6 +82,17 @@ p#menuTab{
   margin-top:40px;
 }
 
+.navTitleDiv{
+  background-color:white;
+  margin-top:5px;    
+  height:50px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline; 
+  justify-content: center;
+  line-height:50px;
+}
+
 .VideosDiv{
   margin-top: 40px;
 }
@@ -87,10 +100,7 @@ p#componentTitle{
   height: 30px;
 }
 
-.videos-paragraphs{
-  cursor: grab;
 
-}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

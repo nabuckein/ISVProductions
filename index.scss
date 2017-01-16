@@ -1,6 +1,7 @@
   
 $mainTitleColor: #bb1000;
 $mainBackgroundColor: white;
+$tabsHeight: 95px;
 
 @mixin for-phone-up {
 	@media (max-width: 400px) { @content; }
@@ -60,7 +61,13 @@ h1{
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
+  @include for-phone-up{
+    margin-bottom: 0;
+  }
+  @include for-phone-only{
+    margin-bottom: 0;
+  }
 }
 p {
   padding: 10px;
@@ -101,7 +108,7 @@ div.row.footer{
 
 .iconVideo{
 	margin-top:10%;  
-  margin-left:-300px;
+  margin-left:-300px;  
 }
 .iconsH1{
   font-family: "Ranga";
@@ -109,13 +116,20 @@ div.row.footer{
   color:white;
   border: solid 1px white;
   border-right: solid 20px white;
+  border-radius: 5px;
   text-align: right;
   padding-right: 20px;
   width:320px;  
+  height: $tabsHeight;
+
 }
 .iconsMouseEnter{
   animation: TabExpansion 0.25s;
   animation-fill-mode: forwards;
+  /*@include for-phone-up{
+    animation: TabExpansion-phone-up 0.25s;
+    animation-fill-mode: forwards;
+  }*/
 }
 .iconsMouseLeave{
   animation: TabContraction 0.25s;
@@ -124,6 +138,10 @@ div.row.footer{
 @keyframes TabExpansion {
   from { width:300px; }
   to { width:450px; }
+}
+@keyframes TabExpansion-phone-up {
+  from { width:300px; }
+  to { width:365px; }
 }
 @keyframes TabContraction {
   from { width:450px; }
@@ -135,6 +153,17 @@ div.row.footer{
    z-index: -100;
    position: absolute;
    
+}
+
+.videos-paragraphs{
+  cursor: grab;  
+  @include for-phone-up{
+    font-size: 14px;
+  }
+  @include for-phone-only{
+    font-size: 18px;
+  }
+
 }
 
 #Calendar{
@@ -169,13 +198,7 @@ div.row.footer{
   
 }
 
-.glyphicon{
-	font-size:30px;
-  font-family: 'Ranga';
-  border: solid 2px;
-  border-radius: 10px;
-  padding: 6px;
-}
+
 .glyphicon-tablet-portrait{
 	@include for-tablet-portrait-only{
 		font-size:30px;
@@ -265,7 +288,7 @@ div.row.footer{
 .img-phone-up {
 	@include for-phone-up{
 		max-width:90% ;
-    	max-height:200px;
+    max-height:200px;
 	}
 }
 .img-phone-only {

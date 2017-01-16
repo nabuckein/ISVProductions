@@ -14,6 +14,7 @@ var videosId = [];
 var passedDailyMotionResponseList = [];
 
 
+
 class Dynamic extends Component {
 
 		static defaultProps = {
@@ -35,8 +36,11 @@ class Dynamic extends Component {
     			
     			var elementClassNames = document.getElementsByClassName("VideosDiv");
     			
+
+
 		    	for (var n=0; n<=passedDailyMotionResponseList.length-1; n++){
         			  videosId.push(passedDailyMotionResponseList[n].id);
+
 		    	  	  var newPElement = document.createElement('p');
 		      		  newPElement.id = "videoTitle" + n;  
 		      		  newPElement.className = "videos-paragraphs";
@@ -52,22 +56,20 @@ class Dynamic extends Component {
   			var iconClicked = document.getElementById('componentTitle');
     			iconClicked.classList.add("iconClickedAnimation");
 
+    		
+
+
   			
   		}
 
 		render(){
-
 			passedDailyMotionResponseList = this.props.dailyMotionResponse.list;
 
 			if(this.props.componentToShow === 'Video'){
-				
-
-
 				return(
-					<Videos/>
+					<Videos passedDailyMotionResponseListFromIconsJS={passedDailyMotionResponseList}/>
 		      	);
 			}
-			
 			else if(this.props.componentToShow === 'Calendar'){
 				videosId = [];
 				return(
