@@ -61,7 +61,6 @@ h1{
   padding-top: 30px;
   padding-bottom: 30px;
   margin-top: 20px;
-  margin-bottom: 60px;
   @include for-phone-up{
     margin-bottom: 0;
   }
@@ -332,17 +331,12 @@ div.row.footer{
   cursor: grab;
   
 }
-
-
-
-
 .desktop-up {
   @include for-desktop-up {
    background: purple;
 
     }
 }
-
 .big-desktop-up {
   @include for-big-desktop-up {
    background: purple;

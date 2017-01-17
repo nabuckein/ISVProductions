@@ -35,7 +35,7 @@ class Icons extends React.Component {
    
   }  
 
-  handleMenuClick = (e) =>{
+  /*handleMenuClick = (e) =>{
 
     var menu = document.getElementById('menu');
     var iconVideoClass = document.getElementsByClassName('iconVideo');
@@ -52,7 +52,7 @@ class Icons extends React.Component {
         iconVideoClass[n].classList.remove('hideIconsWithOpacity');
       }
     } 
-  }
+  }*/
 
   handleCollapseClick = (e) =>{
 
@@ -70,6 +70,7 @@ class Icons extends React.Component {
     this.setState({activeComponent:'Video'});    
     console.log("CLICKED!");
   }
+
 
   handleTabMouseEnter = (e) => {
     var iconID = e.target.id;
@@ -109,14 +110,14 @@ class Icons extends React.Component {
         <div className="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div id="fixedNavBarForSmallerScreens" className="fixedNavBar">   
             <div className="navTitleDiv text-center">       
-              <NavigationBar onClick={this.handleVideoClick} title="Videos"/>
-              <NavigationBar onClick={this.handleCalendarClick} title="Calendar"/>
-              <NavigationBar onClick={this.handlePicturesClick} title="Pictures"/>
-              <NavigationBar onClick={this.handleContactClick} title="Contact"/>
+              <NavigationBar onClick={this.handleVideoClick} title="Videos" />
+              <NavigationBar onClick={this.handleCalendarClick} title="Calendar" />
+              <NavigationBar onClick={this.handlePicturesClick} title="Pictures" />
+              <NavigationBar onClick={this.handleContactClick} title="Contact" />
             </div>
           </div>     
 
-          <div className="DynamicDiv row col-lg-10 col-md-10 col-sm-10 col-xs-10 text-center">
+          <div className="DynamicDiv row col-sm-12 col-xs-12 text-center">
             <Dynamic componentToShow={this.state.activeComponent} dailyMotionResponse={dailyMotionResponse}/>
           </div>
 
@@ -152,7 +153,7 @@ class Icons extends React.Component {
             </div>
           </div>     
 
-          <div className="DynamicDiv row col-lg-10 col-md-10 col-sm-10 col-xs-10 text-center">
+          <div className="DynamicDiv row col-lg-10 col-md-10 text-center">
             <Dynamic componentToShow={this.state.activeComponent} dailyMotionResponse={dailyMotionResponse}/>
           </div>
 

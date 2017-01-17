@@ -7,7 +7,7 @@ import Contact from './Contact.js';
 import Calendar from './Calendar.js';
 import Pictures from './Pictures.js';
 import Videos from './Videos.js';
-//import Icons from './Icons.js';
+
 
 var videosId = [];
 //var passedDailyMotionResponse = {};
@@ -64,7 +64,7 @@ class Dynamic extends Component {
 
 		render(){
 			passedDailyMotionResponseList = this.props.dailyMotionResponse.list;
-
+			console.log(this.props.componentToShow);
 			if(this.props.componentToShow === 'Video'){
 				return(
 					<Videos passedDailyMotionResponseListFromIconsJS={passedDailyMotionResponseList}/>

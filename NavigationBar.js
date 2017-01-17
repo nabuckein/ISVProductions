@@ -6,7 +6,7 @@ class NavigationBar extends React.Component {
 	    return (
 	    	<div id="fixedNavBarForSmallerScreens" className="fixedNavBar">         
 			  
-			    <h3 className="navTitle">{this.props.title}</h3>
+			    <h3 className="navTitle" onClick={this.props.onClick}> {this.props.title} </h3>
 
 			</div> 	      
 	    );
