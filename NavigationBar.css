@@ -1,0 +1,12 @@
+
+
+.navTitle {
+  margin-top:0px;
+  padding: 0 10px 0 10px;
+  color:red;
+  font-size:20px; 
+  line-height:50px;  
+}
+.navTitle:hover{
+  background-color: gray;
+}
