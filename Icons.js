@@ -35,24 +35,6 @@ class Icons extends React.Component {
    
   }  
 
-  /*handleMenuClick = (e) =>{
-
-    var menu = document.getElementById('menu');
-    var iconVideoClass = document.getElementsByClassName('iconVideo');
- 
-    menu.classList.remove('slideMenuFromLeft');
-    menu.classList.add('slideMenuToLeft');
-    
-    for (var n=0; n<=iconVideoClass.length-1; n++){
-      if(iconVideoClass[n].classList.contains('initialHide')){
-        iconVideoClass[n].classList.remove('initialHide')
-        iconVideoClass[n].classList.add('showIconsWithOpacity');
-      }      
-      else{
-        iconVideoClass[n].classList.remove('hideIconsWithOpacity');
-      }
-    } 
-  }*/
 
   handleCollapseClick = (e) =>{
 
@@ -94,8 +76,8 @@ class Icons extends React.Component {
     this.setState({activeComponent:'Calendar'});
   }
 
-  handlePicturesClick = (e) => {
-    this.setState({activeComponent:'Pictures'});
+  handleReviewsClick = (e) => {
+    this.setState({activeComponent:'Reviews'});
   }
 
   handleContactClick = (e) => {
@@ -112,7 +94,7 @@ class Icons extends React.Component {
             <div className="navTitleDiv text-center">       
               <NavigationBar onClick={this.handleVideoClick} title="Videos" />
               <NavigationBar onClick={this.handleCalendarClick} title="Calendar" />
-              <NavigationBar onClick={this.handlePicturesClick} title="Pictures" />
+              <NavigationBar onClick={this.handleReviewsClick} title="Reviews" />
               <NavigationBar onClick={this.handleContactClick} title="Contact" />
             </div>
           </div>     
@@ -141,12 +123,12 @@ class Icons extends React.Component {
               <h1 className="iconsH1" aria-hidden="true" id="calendarIcon" onClick={this.handleCalendarClick}>CALENDAR</h1>
             </div>  
 
-            <div className="iconVideo " id="PicturesIcon" onMouseEnter={this.handleTabMouseEnter} onMouseLeave={this.handleTabMouseLeave}>
-              <h1 className="iconsH1" aria-hidden="true" id="picturesIcon" onClick={this.handlePicturesClick}>PICTURES</h1>
+            <div className="iconVideo " id="ReviewsIcon" onMouseEnter={this.handleTabMouseEnter} onMouseLeave={this.handleTabMouseLeave}>
+              <h1 className="iconsH1" aria-hidden="true" id="reviewsIcon" onClick={this.handleReviewsClick}>REVIEWS</h1>
             </div>  
 
             <div className="iconVideo " id="ContactIcon" onMouseEnter={this.handleTabMouseEnter} onMouseLeave={this.handleTabMouseLeave}>
-              <h1 className="iconsH1" aria-hidden="true" id="contactIcon" onClick={this.handleContactClick}>CONTACTS</h1>
+              <h1 className="iconsH1" aria-hidden="true" id="contactIcon" onClick={this.handleContactClick}>CONTACT</h1>
             </div> 
             <div>
               <p className="iconVideo initialHide" id="collapseIcons" onClick={this.handleCollapseClick}> Collapse </p>

@@ -5,7 +5,7 @@ import './index.css';
 import Welcome from './Welcome.js';
 import Contact from './Contact.js';
 import Calendar from './Calendar.js';
-import Pictures from './Pictures.js';
+import Reviews from './Reviews.js';
 import Videos from './Videos.js';
 
 
@@ -22,22 +22,12 @@ class Dynamic extends Component {
 			clicked: false
 		}
 		
-		/*
-		shouldComponentUpdate(nextProps,nextState,nextContext){
-			if (nextProps.componentToShow === this.props.componentToShow){
-				return false;
-			}
-		}
-		*/
+		
 		componentDidUpdate(){
 
     		if(passedDailyMotionResponseList !== undefined && this.props.componentToShow === 'Video' && videosId.length === 0){
-    			//document.removeChild(document.getElementById("videosComp"));
     			
     			var elementClassNames = document.getElementsByClassName("VideosDiv");
-    			
-
-
 		    	for (var n=0; n<=passedDailyMotionResponseList.length-1; n++){
         			  videosId.push(passedDailyMotionResponseList[n].id);
 
@@ -55,11 +45,6 @@ class Dynamic extends Component {
 
   			var iconClicked = document.getElementById('componentTitle');
     			iconClicked.classList.add("iconClickedAnimation");
-
-    		
-
-
-  			
   		}
 
 		render(){
@@ -76,16 +61,15 @@ class Dynamic extends Component {
 					<Calendar/>
 		      	);
 			}
-			else if(this.props.componentToShow === 'Pictures'){
+			else if(this.props.componentToShow === 'Reviews'){
 				videosId = [];
 				return(
-					<Pictures/>
+					<Reviews/>
 		      	);
 			}else if(this.props.componentToShow === 'Contact'){
 				videosId = [];
 				return(
 					<Contact/>
-			      	
 		      	);
 			}
 	    	else if(this.props.componentToShow === "Welcome"){

@@ -25,11 +25,47 @@
 .IconsDiv{
   margin-left:0px;
 }
-.PicturesDiv{
+.ReviewsDiv{
   max-height: 50%;
-  max-width: 20%;  
+  padding-top: 20px;
 }
-
+.reviewParagraph{
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  font-family: 'Farsan';
+}
+.submitReviewButton{
+  margin-top:100px;
+  background-color:red;
+  color:white;
+  border:solid 1px red;
+  border-radius:4px;
+  padding:8px 20px 8px 20px;
+}
+.submitReviewButton:hover{
+  background-color:transparent;
+}
+.cancelAndDoneButtons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.cancelReviewButton{
+  margin-top:100px;
+  background-color:yellow;
+  color:black;
+  border:solid 1px yellow;
+  border-radius:4px;
+  padding:8px 20px 8px 20px;
+}
+.doneReviewButton{
+  margin-top:100px;
+  background-color:green;
+  color:white;
+  border:solid 1px green;
+  border-radius:4px;
+  padding:8px 20px 8px 20px;
+}
 div.iconsLeft{
   margin-left:0px;
   padding:0px;
@@ -77,7 +113,7 @@ p#menuTab{
   word-wrap: break-word;
 }
 
-.WelcomeDiv, .VideosDiv, .ContactDiv, .PicturesDiv, .CalendarDiv{
+.WelcomeDiv, .VideosDiv, .ContactDiv, .ReviewsDiv, .CalendarDiv{
   font-size:25px;
   margin-top:40px;
 }
