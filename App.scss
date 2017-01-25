@@ -1,0 +1,218 @@
+$redButtonBackground: #ee0000;
+$redButtonBackgroundHovered: #ff0000;
+
+.Welcome {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+#icons{
+  margin-left: 0;
+  padding-left: -100px;
+}
+.IconsDiv{
+  margin-left:0px;
+}
+.ReviewsDiv{
+  max-height: 50%;
+  padding-top: 20px;
+}
+.cancelAndDoneButtons{
+  
+  display: inline-flex;
+  justify-content: space-between;
+}
+.reviewParagraph{
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  font-family: 'Farsan';
+}
+.submitReviewParagraph{
+  font-size:22px;
+}
+.submitReviewButton{
+  margin-top:100px;
+  background-color: $redButtonBackground;
+  color:white;
+  border:solid 1px red;
+  border-radius:4px;
+  padding:8px 20px 8px 20px;
+}
+.submitReviewButton:hover{
+  background-color:$redButtonBackgroundHovered;
+
+}
+
+.cancelReviewButton{
+  margin-left:20px;
+  margin-right: 20px;
+  margin-top:100px;
+  background-color:$redButtonBackground;
+  color:white;
+  border:solid 1px $redButtonBackground;
+  border-radius:4px;
+  padding:8px 20px 8px 20px;
+  font-size:22px;
+}
+.cancelReviewButton:hover{
+  background-color:$redButtonBackgroundHovered;
+
+}
+.doneReviewButton{
+  margin-left:20px;
+  margin-right: 20px;
+  margin-top:100px;
+  background-color:$redButtonBackground;
+  color:white;
+  border:solid 1px $redButtonBackground;
+  border-radius:4px;
+  padding:8px 20px 8px 20px;
+  font-size:22px;
+}
+.doneReviewButton:hover{
+  background-color:$redButtonBackgroundHovered;
+
+}
+div.iconsLeft{
+  margin-left:0px;
+  padding:0px;
+}
+.iconClickedAnimation{
+  animation: Clicked-Animation 2s infinite;
+}
+
+.CompTitle{
+  margin-top: 50px;
+  font-size: 35px;
+}
+.initialHide{
+  opacity: 0.0;
+}
+.slideMenuToLeft{
+  animation: slideToLeft 1s;
+  animation-fill-mode: forwards;
+}
+.slideMenuFromLeft{
+  animation: slideFromLeft 1s;
+  animation-fill-mode: forwards;
+}
+.hideIconsWithOpacity{
+  animation: hideWithOpacity 1s;
+  animation-fill-mode: forwards;
+
+}
+.showIconsWithOpacity{
+  animation: showWithOpacity 1s;  
+}
+.slideAndHide{
+  animation: slideToRight 1s, hideWithOpacity 1s;
+  animation-fill-mode: forwards;
+}
+
+p#menuTab{
+  font-size:20px;
+  position: absolute;
+  margin-left: -20px;
+  padding-top: 100px;
+  border: solid 1px white;
+  height:400px;
+  width:30px;
+  word-wrap: break-word;
+}
+
+.WelcomeDiv, .VideosDiv, .ContactDiv, .ReviewsDiv, .CalendarDiv{
+  font-size:25px;
+  margin-top:40px;
+}
+
+.navTitleDiv{
+  background-color:white;
+  margin-top:5px;    
+  height:50px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline; 
+  justify-content: center;
+  line-height:50px;
+}
+
+.VideosDiv{
+  margin-top: 40px;
+}
+p#componentTitle{
+  height: 30px;
+  margin-bottom: 40px;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+@-moz-keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+@-o-keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+@keyframes Clicked-Animation {
+  0%   { font-size: 100%; }
+  
+  50%  { font-size: 105%; }
+ 
+  100% { font-size: 100%; }
+}
+
+@keyframes slideToLeft {
+  from { transform: translate(0px,0px); }
+  to { transform: translate(-500px,0px); }
+}
+@keyframes slideFromLeft {
+  from { transform: translate(-500px,0px); }
+  to { transform: translate(0px,0px); }
+}
+@keyframes slideToRight {
+  from { transform: translate(0px,0px); }
+  to { transform: translate(200px,0px); }
+}
+
+@keyframes hideWithOpacity {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+@keyframes showWithOpacity {
+  from { opacity: 0.0; }
+  to { opacity: 1.0; }
+}
+

@@ -1,195 +1,202 @@
 .Welcome {
-  text-align: center;
-}
+  text-align: center; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+  height: 80px; }
 
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
-}
+  color: white; }
 
 .App-intro {
-  font-size: large;
-}
+  font-size: large; }
 
-#icons{
+#icons {
   margin-left: 0;
-  padding-left: -100px;
-}
-.IconsDiv{
-  margin-left:0px;
-}
-.ReviewsDiv{
+  padding-left: -100px; }
+
+.IconsDiv {
+  margin-left: 0px; }
+
+.ReviewsDiv {
   max-height: 50%;
-  padding-top: 20px;
-}
-.reviewParagraph{
+  padding-top: 20px; }
+
+.cancelAndDoneButtons {
+  display: inline-flex;
+  justify-content: space-between; }
+
+.reviewParagraph {
   border-top: solid 1px white;
   border-bottom: solid 1px white;
-  font-family: 'Farsan';
-}
-.submitReviewButton{
-  margin-top:100px;
-  background-color:red;
-  color:white;
-  border:solid 1px red;
-  border-radius:4px;
-  padding:8px 20px 8px 20px;
-}
-.submitReviewButton:hover{
-  background-color:transparent;
-}
-.cancelAndDoneButtons{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.cancelReviewButton{
-  margin-top:100px;
-  background-color:yellow;
-  color:black;
-  border:solid 1px yellow;
-  border-radius:4px;
-  padding:8px 20px 8px 20px;
-}
-.doneReviewButton{
-  margin-top:100px;
-  background-color:green;
-  color:white;
-  border:solid 1px green;
-  border-radius:4px;
-  padding:8px 20px 8px 20px;
-}
-div.iconsLeft{
-  margin-left:0px;
-  padding:0px;
-}
-.iconClickedAnimation{
-  animation: Clicked-Animation 2s infinite;
-}
+  font-family: 'Farsan'; }
 
-.CompTitle{
+.submitReviewParagraph {
+  font-size: 22px; }
+
+.submitReviewButton {
+  margin-top: 100px;
+  background-color: #ee0000;
+  color: white;
+  border: solid 1px red;
+  border-radius: 4px;
+  padding: 8px 20px 8px 20px; }
+
+.submitReviewButton:hover {
+  background-color: #ff0000; }
+
+.cancelReviewButton {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 100px;
+  background-color: #ee0000;
+  color: white;
+  border: solid 1px #ee0000;
+  border-radius: 4px;
+  padding: 8px 20px 8px 20px;
+  font-size: 22px; }
+
+.cancelReviewButton:hover {
+  background-color: #ff0000; }
+
+.doneReviewButton {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 100px;
+  background-color: #ee0000;
+  color: white;
+  border: solid 1px #ee0000;
+  border-radius: 4px;
+  padding: 8px 20px 8px 20px;
+  font-size: 22px; }
+
+.doneReviewButton:hover {
+  background-color: #ff0000; }
+
+div.iconsLeft {
+  margin-left: 0px;
+  padding: 0px; }
+
+.iconClickedAnimation {
+  animation: Clicked-Animation 2s infinite; }
+
+.CompTitle {
   margin-top: 50px;
-  font-size: 35px;
-}
-.initialHide{
-  opacity: 0.0;
-}
-.slideMenuToLeft{
+  font-size: 35px; }
+
+.initialHide {
+  opacity: 0.0; }
+
+.slideMenuToLeft {
   animation: slideToLeft 1s;
-  animation-fill-mode: forwards;
-}
-.slideMenuFromLeft{
+  animation-fill-mode: forwards; }
+
+.slideMenuFromLeft {
   animation: slideFromLeft 1s;
-  animation-fill-mode: forwards;
-}
-.hideIconsWithOpacity{
+  animation-fill-mode: forwards; }
+
+.hideIconsWithOpacity {
   animation: hideWithOpacity 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
 
-}
-.showIconsWithOpacity{
-  animation: showWithOpacity 1s;  
-}
-.slideAndHide{
+.showIconsWithOpacity {
+  animation: showWithOpacity 1s; }
+
+.slideAndHide {
   animation: slideToRight 1s, hideWithOpacity 1s;
-  animation-fill-mode: forwards;
-}
+  animation-fill-mode: forwards; }
 
-p#menuTab{
-  font-size:20px;
+p#menuTab {
+  font-size: 20px;
   position: absolute;
   margin-left: -20px;
   padding-top: 100px;
   border: solid 1px white;
-  height:400px;
-  width:30px;
-  word-wrap: break-word;
-}
+  height: 400px;
+  width: 30px;
+  word-wrap: break-word; }
 
-.WelcomeDiv, .VideosDiv, .ContactDiv, .ReviewsDiv, .CalendarDiv{
-  font-size:25px;
-  margin-top:40px;
-}
+.WelcomeDiv, .VideosDiv, .ContactDiv, .ReviewsDiv, .CalendarDiv {
+  font-size: 25px;
+  margin-top: 40px; }
 
-.navTitleDiv{
-  background-color:white;
-  margin-top:5px;    
-  height:50px;
+.navTitleDiv {
+  background-color: white;
+  margin-top: 5px;
+  height: 50px;
   display: flex;
   flex-direction: row;
-  align-items: baseline; 
+  align-items: baseline;
   justify-content: center;
-  line-height:50px;
-}
+  line-height: 50px; }
 
-.VideosDiv{
-  margin-top: 40px;
-}
-p#componentTitle{
+.VideosDiv {
+  margin-top: 40px; }
+
+p#componentTitle {
   height: 30px;
-}
-
+  margin-bottom: 40px; }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 @-webkit-keyframes Clicked-Animation {
-  0%   { font-size: 100%; }
-  
-  50%  { font-size: 105%; }
- 
-  100% { font-size: 100%; }
-}
+  0% {
+    font-size: 100%; }
+  50% {
+    font-size: 105%; }
+  100% {
+    font-size: 100%; } }
 @-moz-keyframes Clicked-Animation {
-  0%   { font-size: 100%; }
-  
-  50%  { font-size: 105%; }
- 
-  100% { font-size: 100%; }
-}
+  0% {
+    font-size: 100%; }
+  50% {
+    font-size: 105%; }
+  100% {
+    font-size: 100%; } }
 @-o-keyframes Clicked-Animation {
-  0%   { font-size: 100%; }
-  
-  50%  { font-size: 105%; }
- 
-  100% { font-size: 100%; }
-}
+  0% {
+    font-size: 100%; }
+  50% {
+    font-size: 105%; }
+  100% {
+    font-size: 100%; } }
 @keyframes Clicked-Animation {
-  0%   { font-size: 100%; }
-  
-  50%  { font-size: 105%; }
- 
-  100% { font-size: 100%; }
-}
-
+  0% {
+    font-size: 100%; }
+  50% {
+    font-size: 105%; }
+  100% {
+    font-size: 100%; } }
 @keyframes slideToLeft {
-  from { transform: translate(0px,0px); }
-  to { transform: translate(-500px,0px); }
-}
+  from {
+    transform: translate(0px, 0px); }
+  to {
+    transform: translate(-500px, 0px); } }
 @keyframes slideFromLeft {
-  from { transform: translate(-500px,0px); }
-  to { transform: translate(0px,0px); }
-}
+  from {
+    transform: translate(-500px, 0px); }
+  to {
+    transform: translate(0px, 0px); } }
 @keyframes slideToRight {
-  from { transform: translate(0px,0px); }
-  to { transform: translate(200px,0px); }
-}
-
+  from {
+    transform: translate(0px, 0px); }
+  to {
+    transform: translate(200px, 0px); } }
 @keyframes hideWithOpacity {
-  from { opacity: 1.0; }
-  to { opacity: 0.0; }
-}
+  from {
+    opacity: 1.0; }
+  to {
+    opacity: 0.0; } }
 @keyframes showWithOpacity {
-  from { opacity: 0.0; }
-  to { opacity: 1.0; }
-}
+  from {
+    opacity: 0.0; }
+  to {
+    opacity: 1.0; } }
 
+/*# sourceMappingURL=App.css.map */
