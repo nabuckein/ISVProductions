@@ -5,21 +5,8 @@ $redButtonBackgroundHovered: #ff0000;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
 
-.App-intro {
-  font-size: large;
-}
 
 #icons{
   margin-left: 0;
@@ -44,6 +31,17 @@ $redButtonBackgroundHovered: #ff0000;
 }
 .submitReviewParagraph{
   font-size:22px;
+  font-family: 'Farsan';
+}
+.submitReviewInput{
+  border-radius: 10px;
+  
+  color:black;
+  text-align:left;
+  font-size: 30px;
+ 
+
+  
 }
 .submitReviewButton{
   margin-top:100px;

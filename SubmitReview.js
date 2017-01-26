@@ -12,8 +12,8 @@ class SubmitReview extends Component {
 				</div>
 				<div className="SubmitReviewsDiv col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8">
 					<div>
-		      		 <p className="submitReviewParagraph"> "Please enter a review and hit 'Done' button to submit it:" </p>		
-		      		 <input></input>
+		      		 <p className="submitReviewParagraph col-lg-12"> Please enter a review and hit 'Done' button to submit it: </p>		
+		      		 <input className="submitReviewInput col-lg-12" type="text" placeholder="Enter your review here."></input>
 		      		</div>
 		      		 <div className="cancelAndDoneButtons">
 		      		 	<button className="cancelReviewButton" onClick={this.props.reviewToShow}>Cancel</button>

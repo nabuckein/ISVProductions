@@ -13,6 +13,11 @@ class Reviews extends Component {
 		this.setState({reviewComponentToShow: 'Reviews'});
 	}
 
+	componentDidUpdate(){
+		var iconClicked = document.getElementById('componentTitle');
+    			iconClicked.classList.add("iconClickedAnimation");
+	}
+
     render() {
     	if(this.state.reviewComponentToShow === 'Reviews'){
 	      	return (
