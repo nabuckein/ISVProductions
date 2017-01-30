@@ -1,3 +1,8 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 @keyframes divDisappear {
   from {
     opacity: 1.0; }
@@ -160,7 +165,7 @@ div.row.footer {
   border-radius: 300px;
   border-width: 2px; }
 
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 600px) and (max-width: 899.9px) {
   .glyphicon-tablet-portrait {
     font-size: 30px; } }
 
@@ -195,8 +200,14 @@ div.row.footer {
 @media (min-width: 400px) and (max-width: 599px) {
   .mainTitle-phone-only-font {
     font-size: 35px; } }
+@media (min-width: 600px) and (max-width: 899.9px) {
+  .mainTitle-phone-only-font {
+    font-size: 40px; } }
+@media (min-width: 900px) and (max-width: 1199px) {
+  .mainTitle-phone-only-font {
+    font-size: 40px; } }
 
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 600px) and (max-width: 899.9px) {
   .tablet-portait-only {
     background: green; } }
 
@@ -216,7 +227,7 @@ div.row.footer {
     max-width: 90%;
     max-height: 400px; } }
 
-@media (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 600px) and (max-width: 899.9px) {
   .img-tablet-portrait-only {
     max-width: 90%;
     max-height: 300px; } }
@@ -239,7 +250,7 @@ div.row.footer {
   @media (max-width: 400px) {
     .dynamic-title-text-sizes {
       font-size: 20px; } }
-  @media (min-width: 600px) and (max-width: 899px) {
+  @media (min-width: 600px) and (max-width: 899.9px) {
     .dynamic-title-text-sizes {
       font-size: 22px; } }
   @media (min-width: 900px) and (max-width: 1199px) {
@@ -259,7 +270,7 @@ div.row.footer {
   @media (max-width: 400px) {
     .dynamic-paragraphs-text-sizes {
       font-size: 18px; } }
-  @media (min-width: 600px) and (max-width: 899px) {
+  @media (min-width: 600px) and (max-width: 899.9px) {
     .dynamic-paragraphs-text-sizes {
       font-size: 20px; } }
   @media (min-width: 900px) and (max-width: 1199px) {

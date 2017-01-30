@@ -1,18 +1,10 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .Welcome {
   text-align: center; }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white; }
-
-.App-intro {
-  font-size: large; }
 
 #icons {
   margin-left: 0;
@@ -27,7 +19,8 @@
 
 .cancelAndDoneButtons {
   display: inline-flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 50px; }
 
 .reviewParagraph {
   border-top: solid 1px white;
@@ -35,7 +28,27 @@
   font-family: 'Farsan'; }
 
 .submitReviewParagraph {
-  font-size: 22px; }
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-family: 'Farsan'; }
+
+.submitReviewInputText {
+  height: 100px; }
+
+.submitReviewInput {
+  border-radius: 10px;
+  color: black;
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Farsan'; }
+
+.submitReviewInputUserInfo {
+  margin-top: 40px;
+  margin-bottom: 0;
+  border: none;
+  border-bottom: solid 1px white;
+  background-color: #bb1000; }
 
 .submitReviewButton {
   margin-top: 100px;
@@ -51,7 +64,6 @@
 .cancelReviewButton {
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 100px;
   background-color: #ee0000;
   color: white;
   border: solid 1px #ee0000;
@@ -65,7 +77,6 @@
 .doneReviewButton {
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 100px;
   background-color: #ee0000;
   color: white;
   border: solid 1px #ee0000;
@@ -84,7 +95,8 @@ div.iconsLeft {
   animation: Clicked-Animation 2s infinite; }
 
 .CompTitle {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 35px; }
 
 .initialHide {

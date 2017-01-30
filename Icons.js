@@ -1,5 +1,4 @@
 
-import * as firebase from "firebase";
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
@@ -12,15 +11,7 @@ var dailyMotionResponse = {test:"test"};
 
 //Initialize Firebase
 
-var config = {
-        apiKey: "AIzaSyDvvApUyZHysaiGjsXs3zDjlE0eCPxhyi8",
-        authDomain: "isvproductions-70e87.firebaseapp.com",
-        databaseURL: "https://isvproductions-70e87.firebaseio.com",
-        storageBucket: "isvproductions-70e87.appspot.com",
-        messagingSenderId: "202300622003"
-      };
 
-firebase.initializeApp(config);
 
 class Icons extends React.Component {
 
@@ -63,7 +54,7 @@ class Icons extends React.Component {
   }
 
   handleVideoClick = (e) => {
-    this.setState({activeComponent:'Video'});    
+    this.setState({activeComponent:'Owner'});    //CHANGE BACK TO VIDEO, TESTING OWNER !!!!!!!!!!!!!!!
     console.log("CLICKED!");
   }
 

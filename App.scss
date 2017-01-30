@@ -1,13 +1,31 @@
 $redButtonBackground: #ee0000;
 $redButtonBackgroundHovered: #ff0000;
+$mainTitleColor: #bb1000;
 
-.Welcome {
-  text-align: center;
+$breakpoint-tablet: 768px;
+
+
+@mixin small-screens {
+  @media (max-width: 480px) { @content; }
+}
+@mixin medium-screens {
+  @media (min-width: 481px) and (max-width: 800px){ @content; }
+}
+@mixin large-screens {
+  @media (min-width: 801px) { @content; }
 }
 
 
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
 
+.Welcome {
+  text-align: center;
+}
 #icons{
   margin-left: 0;
   padding-left: -100px;
@@ -20,9 +38,9 @@ $redButtonBackgroundHovered: #ff0000;
   padding-top: 20px;
 }
 .cancelAndDoneButtons{
-  
   display: inline-flex;
   justify-content: space-between;
+  margin-top:50px;
 }
 .reviewParagraph{
   border-top: solid 1px white;
@@ -30,18 +48,28 @@ $redButtonBackgroundHovered: #ff0000;
   font-family: 'Farsan';
 }
 .submitReviewParagraph{
-  font-size:22px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  font-size:26px;
   font-family: 'Farsan';
 }
+.submitReviewInputText{
+  height: 100px;
+}
 .submitReviewInput{
-  border-radius: 10px;
-  
+  border-radius: 10px;  
+
   color:black;
   text-align:left;
-  font-size: 30px;
- 
-
-  
+  font-size: 20px;
+  font-family: 'Farsan';
+}
+.submitReviewInputUserInfo{
+  margin-top:40px;
+  margin-bottom: 0;
+  border: none;
+  border-bottom:solid 1px white;
+  background-color:$mainTitleColor; 
 }
 .submitReviewButton{
   margin-top:100px;
@@ -53,13 +81,11 @@ $redButtonBackgroundHovered: #ff0000;
 }
 .submitReviewButton:hover{
   background-color:$redButtonBackgroundHovered;
-
 }
 
 .cancelReviewButton{
   margin-left:20px;
   margin-right: 20px;
-  margin-top:100px;
   background-color:$redButtonBackground;
   color:white;
   border:solid 1px $redButtonBackground;
@@ -74,7 +100,6 @@ $redButtonBackgroundHovered: #ff0000;
 .doneReviewButton{
   margin-left:20px;
   margin-right: 20px;
-  margin-top:100px;
   background-color:$redButtonBackground;
   color:white;
   border:solid 1px $redButtonBackground;
@@ -95,7 +120,8 @@ div.iconsLeft{
 }
 
 .CompTitle{
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 35px;
 }
 .initialHide{
