@@ -7,6 +7,7 @@ import Contact from './Contact.js';
 import Calendar from './Calendar.js';
 import Reviews from './Reviews.js';
 import Videos from './Videos.js';
+import Owner from './Owner.js';
 
 
 var videosId = [];
@@ -71,6 +72,11 @@ class Dynamic extends Component {
 				return(
 					<Contact/>
 		      	);
+			}else if(this.props.componentToShow === 'Owner'){
+				videosId = [];
+				return(
+					<Owner/>
+				)
 			}
 	    	else if(this.props.componentToShow === "Welcome"){
 	    		videosId = [];

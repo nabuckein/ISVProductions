@@ -1,4 +1,5 @@
 
+
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
@@ -7,6 +8,10 @@ import Dynamic from './Dynamic.js';
 import NavigationBar from './NavigationBar.js';
 
 var dailyMotionResponse = {test:"test"};
+
+//Initialize Firebase
+
+
 
 class Icons extends React.Component {
 
@@ -49,7 +54,7 @@ class Icons extends React.Component {
   }
 
   handleVideoClick = (e) => {
-    this.setState({activeComponent:'Video'});    
+    this.setState({activeComponent:'Owner'});    //CHANGE BACK TO VIDEO, TESTING OWNER !!!!!!!!!!!!!!!
     console.log("CLICKED!");
   }
 
