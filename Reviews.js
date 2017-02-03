@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import SubmitReview from './SubmitReview.js';
 import './App.css';
 
+
 class Reviews extends Component {
 	state = {
 		reviewComponentToShow: 'Reviews'
+
 	}
 	handleSubmitReviewButton = (e) => {
 		this.setState({reviewComponentToShow: 'SubmitReview'});
 	}
-	handleCancelSubmitReviewButton = (e) => {
+	handleCancelOrDoneSubmitReviewButton = (e) => {
 		this.setState({reviewComponentToShow: 'Reviews'});
 	}
+	handleDoneSubmitReviewButton = (e) => {
+			this.setState({reviewComponentToShow: 'SubmitReviewDone'});	
+	}
+	
 
 	componentDidUpdate(){
 		var iconClicked = document.getElementById('componentTitle');
@@ -32,11 +38,12 @@ class Reviews extends Component {
 		      		</div>
 	      		</div>
 	    	);
-	    }else{
+	    }else if(this.state.reviewComponentToShow ==='SubmitReview'){
 	    	return(
-	    		<SubmitReview reviewToShow={this.handleCancelSubmitReviewButton}/>
+	    		<SubmitReview reviewToShow={this.handleCancelOrDoneSubmitReviewButton}/>
 	    	)
 	    }	
+	    
   	}
 
 }

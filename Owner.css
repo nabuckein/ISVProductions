@@ -1,0 +1,23 @@
+.submittedReviewParagraph {
+  font-size: 20px; }
+
+.approveReviewButton {
+  background-color: green;
+  font-size: 20px;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 10px; }
+
+.rejectReviewButton {
+  background-color: red;
+  font-size: 20px;
+  padding: 5px 20px 5px 20px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 10px; }
+
+.reviewsApprovalDiv {
+  display: inline; }
+
+/*# sourceMappingURL=Owner.css.map */
