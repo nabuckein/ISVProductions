@@ -1,23 +1,54 @@
+.reviewsContainer {
+  margin-top: 80px;
+  font-family: 'Farsan'; }
+
+.reviewsApprovalDiv {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  border: none; }
+
 .submittedReviewParagraph {
-  font-size: 20px; }
+  font-size: 20px;
+  margin-bottom: 0;
+  order: 1;
+  flex-grow: 2; }
 
 .approveReviewButton {
   background-color: green;
   font-size: 20px;
   border: none;
   border-radius: 3px;
-  padding: 5px 10px 5px 10px;
-  margin-right: 10px; }
+  padding: 0 10px 0 10px;
+  margin-right: 10px;
+  order: 2; }
+
+.approveReviewButton:hover {
+  background-color: lime; }
 
 .rejectReviewButton {
   background-color: red;
   font-size: 20px;
-  padding: 5px 20px 5px 20px;
+  padding: 0 20px 0 20px;
   border: none;
   border-radius: 3px;
-  margin-left: 10px; }
+  margin-left: 10px;
+  margin-right: 10px;
+  order: 3; }
 
-.reviewsApprovalDiv {
-  display: inline; }
+.rejectReviewButton:hover {
+  background-color: darkorange; }
+
+.emailReviewButton {
+  background-color: blue;
+  font-size: 20px;
+  padding: 0 20px 0 20px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 10px;
+  order: 4; }
+
+.emailReviewButton:hover {
+  background-color: purple; }
 
 /*# sourceMappingURL=Owner.css.map */

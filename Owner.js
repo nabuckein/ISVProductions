@@ -10,47 +10,54 @@ var userInfo = {
 	lastName : 'empty',
 	email: 'empty'
 };
-
+var arrayOfReviewsFirstName = [];
+var arrayOfReviewsLastName = [];
+var arrayOfReviewsEmail = [];
 var arrayOfReviews = [];
 
-
-firebase.database().ref('/users/').once('value').then(function(snapshot) {
-      userInfo.firstName = snapshot.val().firstName;
-      // ...
-      
-      snapshot.forEach(function(childSnapshot) {
-	    var childKey = childSnapshot.key;
-	    var childData = childSnapshot.val();
-	    // ...
-	    //console.log("Key: " + childKey + ", Value: " + childData);
-	    arrayOfReviews.push(<p className="submittedReviewParagraph">{"Name: " + childKey + ", E-Mail Address: " + childData.email}</p>,
-	    	<button className="approveReviewButton">Approve</button>,
-	    	<button className="rejectReviewButton">Reject</button>);
-	  });
-
-      
+var firebaseRef = firebase.database().ref('users/');
+firebaseRef.on('value', function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+        var childKey = childSnapshot.key;
+        var childData = childSnapshot.val();
+        userInfo.firstName = childKey;
+        arrayOfReviewsFirstName.push(childData.firstName);
+        arrayOfReviewsLastName.push(childData.lastName);
+        arrayOfReviewsEmail.push(childData.email);
+        arrayOfReviews.push(childData.review);
+      });  
 });
 
-
-
 class Owner extends Component {
-  
-  componentWillMount(){
 
+  state = {
+    refreshReviewsList: false,
+    reviews: arrayOfReviews[0],
+    firstNames : arrayOfReviewsFirstName,
+    lastNames : arrayOfReviewsLastName,
+    emails: arrayOfReviewsEmail
   }
+
+  handleApproveClick = (e) =>{
+    arrayOfReviews.pop();
+    console.log(arrayOfReviews);
+    this.setState({reviews:arrayOfReviews[1]});
+  }
+
   render() {
   	
-
 	    return (
 	      <div>
-	        <div className="CompTitle" >
-	          <p id="componentTitle">Public Relations</p> 
+	        <div className="CompTitle">
+	          <p id="componentTitle">Pending Reviews</p> 
 	        </div>
-	        <div className="reviewsApprovalDiv">
-	        	{arrayOfReviews}
+	        <div className="reviewsContainer text-center" id="approveAndRemoveButtons">	        	
+            <OwnerReviewApproval approveHandler={this.handleApproveClick} firstName={this.state.reviews} lastName={arrayOfReviewsLastName[0]} review={arrayOfReviews[0]}/>
+            <OwnerReviewApproval firstName={arrayOfReviewsFirstName[1]} lastName={arrayOfReviewsLastName[1]} review={arrayOfReviews[1]}/>
 	        </div>
 	      </div>
 	    );
+
 
 	
   }
