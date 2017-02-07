@@ -12,6 +12,7 @@ var config = {
 			      };
 firebase.initializeApp(config);
 
+
 class SubmitReview extends Component {
 
 	state = {
@@ -32,9 +33,7 @@ class SubmitReview extends Component {
 				}).catch(function(error){
 				  	console.log(error);
 				});
-
-			alert("Thank you! Your review have been submitted, once approved it will be published. For any questions, please refer to the FAQ section of our website.");
-			this.setState({submitDonePressed: true});
+		this.setState({submitDonePressed: true});
 		}
 	}
 	
@@ -64,8 +63,13 @@ class SubmitReview extends Component {
 		}
 		else{
 			return (
-				<SubmitReviewDone/>
-			)
+				<div>        
+			        <div className="SubmitReviewDoneDiv">
+			          <p className="SubmitReviewDoneParagraphs">Thank you so much for your review! We truly appreciate your feedback!</p>
+			          <button className="SubmitReviewDoneButton" onClick={this.props.reviewToShow}>Continue</button>
+			        </div>
+		      	</div>
+			);
 		}
   }
 
