@@ -14,17 +14,16 @@ class Owner extends Component {
 		reviewsLastNameArray: ["test3"],
 		reviewsEmailArray: ["test4"]
 	}
-
-
 	componentWillMount = (e) =>{
 		var childDataReview= [];
 		var childDataFirstNameReview= [];
 		var childDataLastNameReview= [];
 		var childDataEmailReview= [];	
 		var firebaseRef = firebase.database().ref('users/');
-	    firebaseRef.on('value', function(snapshot) {
+
+	    firebaseRef.on('value', function(snapshot) { //Request to Firebase the users
 	    	//var childKey = [];		    
-		  	snapshot.forEach(function(childSnapshot) {
+		  	snapshot.forEach(function(childSnapshot) {	//Push each user values from the request onto different arrays
 		        //var childKey.push(childSnapshot.key);
 		        childDataReview.push(childSnapshot.val().review);
 		        childDataFirstNameReview.push(childSnapshot.val().firstName);
@@ -33,17 +32,16 @@ class Owner extends Component {
 		    });
 
 	  	});
-	  	this.setState({reviewsArray:childDataReview});
+
+	  	this.setState({reviewsArray:childDataReview}); //Use arrays obtained on previous firebase request to update state and then pass the states as props.
 		this.setState({reviewsFirstNameArray:childDataFirstNameReview});
 		this.setState({reviewsLastNameArray:childDataLastNameReview});
-		this.setState({reviewsEmailArray:childDataEmailReview});	     
-
+		this.setState({reviewsEmailArray:childDataEmailReview});	 
 	}
-
 
   	render() {
   		rows = [];  		
-		for (var i=0; i <= this.state.reviewsArray.length-1; i++) {			
+		for (var i=0; i <= this.state.reviewsArray.length-1; i++) {			//Need this FOR loop to create amount (depends on what's in Firebase) of OwnerReviewApproval components
 		    rows.push(<OwnerReviewApproval userFirstName={this.state.reviewsFirstNameArray[i]} userLastName={this.state.reviewsLastNameArray[i]} userEmail={this.state.reviewsEmailArray[i]} userReview={this.state.reviewsArray[i]}/>
 			);
 		}
@@ -55,7 +53,7 @@ class Owner extends Component {
 	          <p id="componentTitle">Pending Reviews</p> 
 	        </div>
 	        <div className="reviewsContainer text-center" id="approveAndRemoveButtons">	        	
- 				{rows}
+ 				{rows} 
  			</div>
 	      </div>
 	    );	
