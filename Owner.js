@@ -3,63 +3,61 @@ import './Owner.css';
 import OwnerReviewApproval from './OwnerReviewApproval.js';
 import * as firebase from "firebase";
 
-
-//retrievedFirstName = "retrievedFirstName";
-var userInfo = {
-	firstName : 'empty',
-	lastName : 'empty',
-	email: 'empty'
-};
-
-var arrayOfReviewsFirstName = [];
-var arrayOfReviewsLastName = [];
-var arrayOfReviewsEmail = [];
-var arrayOfReviews = [];
 var rows = [];
 
-var firebaseRef = firebase.database().ref('users/');
-	    firebaseRef.on('value', function(snapshot) {
-	  	snapshot.forEach(function(childSnapshot) {
-	        var childKey = childSnapshot.key;
-	        var childData = childSnapshot.val();
-	        userInfo.firstName = childKey;
-	        arrayOfReviewsFirstName.push(childData.firstName);
-	        arrayOfReviewsLastName.push(childData.lastName);
-	        arrayOfReviewsEmail.push(childData.email);
-	        arrayOfReviews.push(childData.review);
-	      //});  
-	    	});
-	  	});
 
 class Owner extends Component {
 
-	componentWillUpdate = (e) =>{
-		arrayOfReviewsFirstName = [];
-		arrayOfReviewsLastName = [];
-		arrayOfReviewsEmail = [];
-		arrayOfReviews = [];
-		rows = [];
+	state = {
+		reviewsArray: ["test1"],
+		reviewsFirstNameArray: ["test2"],
+		reviewsLastNameArray: ["test3"],
+		reviewsEmailArray: ["test4"]
+	}
+	componentWillMount = (e) =>{
+		var childDataReview= [];
+		var childDataFirstNameReview= [];
+		var childDataLastNameReview= [];
+		var childDataEmailReview= [];	
+		var firebaseRef = firebase.database().ref('users/');
 
-		
+	    firebaseRef.on('value', function(snapshot) { //Request to Firebase the users
+	    	//var childKey = [];		    
+		  	snapshot.forEach(function(childSnapshot) {	//Push each user values from the request onto different arrays
+		        //var childKey.push(childSnapshot.key);
+		        childDataReview.push(childSnapshot.val().review);
+		        childDataFirstNameReview.push(childSnapshot.val().firstName);
+		        childDataLastNameReview.push(childSnapshot.val().lastName);
+		        childDataEmailReview.push(childSnapshot.val().email);
+		    });
+
+	  	});
+
+	  	this.setState({reviewsArray:childDataReview}); //Use arrays obtained on previous firebase request to update state and then pass the states as props.
+		this.setState({reviewsFirstNameArray:childDataFirstNameReview});
+		this.setState({reviewsLastNameArray:childDataLastNameReview});
+		this.setState({reviewsEmailArray:childDataEmailReview});	 
 	}
 
-  render() {
-  		rows = [];
-		for (var i=0; i <= arrayOfReviews.length-1; i++) {			
-		    rows.push(<OwnerReviewApproval userFirstName={arrayOfReviewsFirstName[i]} userLastName={arrayOfReviewsLastName[i]} userEmail={arrayOfReviewsEmail[i]} userReview={arrayOfReviews[i]}/>
+  	render() {
+  		rows = [];  		
+		for (var i=0; i <= this.state.reviewsArray.length-1; i++) {			//Need this FOR loop to create amount (depends on what's in Firebase) of OwnerReviewApproval components
+		    rows.push(<OwnerReviewApproval userFirstName={this.state.reviewsFirstNameArray[i]} userLastName={this.state.reviewsLastNameArray[i]} userEmail={this.state.reviewsEmailArray[i]} userReview={this.state.reviewsArray[i]}/>
 			);
 		}
+	
+		
 	    return (
 	      <div>
 	        <div className="CompTitle">
 	          <p id="componentTitle">Pending Reviews</p> 
 	        </div>
 	        <div className="reviewsContainer text-center" id="approveAndRemoveButtons">	        	
- 				{rows}
+ 				{rows} 
  			</div>
 	      </div>
 	    );	
-  }
+  	}
 }
 
 export default Owner;

@@ -20,7 +20,7 @@ class OwnerReviewApproval extends Component {
     var userToRenderEmail ="testingUserToRenderEmail";
     var userToRenderReview ="testingUserToRenderReview";
 
-    var firebaseRef = firebase.database().ref('users/' + this.props.userFirstName);
+    var firebaseRef = firebase.database().ref('users/' + this.props.userFirstName); //Maybe create an ID to use: this.props.userId
     firebaseRef.on('value',function(snapshot){
       var childKey = snapshot.val();
       userToRenderFirstName = childKey.firstName;  
@@ -28,6 +28,7 @@ class OwnerReviewApproval extends Component {
       userToRenderEmail = childKey.email;   
       userToRenderReview = childKey.review;
     });    
+    
     this.setState({firstName:userToRenderFirstName});
     this.setState({lastName:userToRenderLastName});
     this.setState({email:userToRenderEmail});
@@ -36,7 +37,7 @@ class OwnerReviewApproval extends Component {
 
   handleApproveClick = (e) => {
     this.setState({hideThisComponent:true}); 
-    firebase.database().ref('users/' + this.props.userFirstName).remove();
+    firebase.database().ref('users/' + this.props.userFirstName).remove(); //Use created ID in this.props.userId
   }
   
 

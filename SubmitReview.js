@@ -24,12 +24,12 @@ class SubmitReview extends Component {
  		var usersEmail = document.getElementById("usersEmail").value;
  		var usersReview = document.getElementById("usersReview").value;
 		if(usersEmail !== "" && usersFirstName !== "" && usersLastName !== "" && usersReview !== ""){
-			console.log(usersEmail);
 				firebase.database().ref('users/' + usersFirstName).set({
 				    firstName: usersFirstName,
 				    lastName: usersLastName,
 				    email: usersEmail,
-				    review: usersReview
+				    review: usersReview,
+				    reviewAccepted: false
 				}).catch(function(error){
 				  	console.log(error);
 				});
