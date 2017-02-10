@@ -47,11 +47,15 @@ $breakpoint-tablet: 768px;
   border-bottom: solid 1px white;
   font-family: 'Farsan';
 }
-.submitReviewParagraph{
+.submitReviewParagraph, .SubmitReviewDoneParagraphs{
   margin-top:20px;
   margin-bottom: 20px;
   font-size:26px;
   font-family: 'Farsan';
+}
+.SubmitReviewDoneParagraphs{
+  margin-top:80px;
+  margin-bottom:80px;
 }
 .submitReviewInputText{
   height: 100px;
@@ -83,7 +87,7 @@ $breakpoint-tablet: 768px;
   background-color:$redButtonBackgroundHovered;
 }
 
-.cancelReviewButton{
+.cancelReviewButton, .SubmitReviewDoneButton{
   margin-left:20px;
   margin-right: 20px;
   background-color:$redButtonBackground;
