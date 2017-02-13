@@ -29,7 +29,8 @@ class SubmitReview extends Component {
 				    lastName: usersLastName,
 				    email: usersEmail,
 				    review: usersReview,
-				    reviewAccepted: false
+				    reviewAccepted: false,
+				    reviewRejected: false
 				}).catch(function(error){
 				  	console.log(error);
 				});

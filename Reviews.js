@@ -7,29 +7,30 @@ import * as firebase from "firebase";
 var reviewsToShow = [];
 var acceptedReviewsArray = [];
 var reviewText = [];
-var firebaseReviewsRefDone = false;
-
+var reviewUser = [];
 var firebaseReviewsRef = firebase.database().ref('users/');
 
     firebaseReviewsRef.on('value', function(snapshot) { 
     	acceptedReviewsArray = [];
     	reviewText = [];
+    	reviewUser = [];
 	  	snapshot.forEach(function(childSnapshot) {	
         //if(childSnapshot.val().reviewsAccepted === '1'){
         	reviewText.push(childSnapshot.val().review);
-        	acceptedReviewsArray.push(childSnapshot.val().reviewsAccepted);
+        	acceptedReviewsArray.push(childSnapshot.val().reviewAccepted);
+        	reviewUser.push(childSnapshot.val().firstName + " " + childSnapshot.val().lastName);
         //}
     });
 		
 	console.log("FIREBASE DONE");
-		  	//firebaseReviewsRefDone = true;
 });
 
 class Reviews extends Component {
 	state = {
 		reviewComponentToShow: 'Reviews',
 		reviewText: "testReviewText",
-		acceptedReviews: ["testAcceptedReviews"]
+		acceptedReviews: ["testAcceptedReviews"],
+		reviewUser: "testReviewUser"
 	}
 	handleSubmitReviewButton = (e) => {
 		this.setState({reviewComponentToShow: 'SubmitReview'});
@@ -53,8 +54,8 @@ class Reviews extends Component {
 		//acceptedReviewsArray = [];
 	    //reviewText = [];
 	  	this.setState({reviewText:reviewText});
+	  	this.setState({reviewUser:reviewUser});
 	  	this.setState({acceptedReviews:acceptedReviewsArray});
-	  	firebaseReviewsRefDone = true;
 	}
 	componentWillUpdate = (e) =>{
 		console.log("REVIEW WILL UPDATE");
@@ -85,7 +86,9 @@ class Reviews extends Component {
     	console.log("REVIEWS HAS JUST RENDERED");
 
     	for (var n=0; n <= this.state.reviewText.length-1; n++){
-    		reviewsToShow.push(<ReviewsAccepted key={n} reviewText={this.state.reviewText[n]}/>);
+    		if (acceptedReviewsArray[n] !== false){
+    			reviewsToShow.push(<ReviewsAccepted key={n} reviewText={this.state.reviewText[n]} reviewUser={this.state.reviewUser[n]}/>);
+    		}
     	}
     	//acceptedReviewsArray = []; // Need because REVIEW component is being updated when clicking on submit, done, and cancel buttons
     	if(this.state.reviewComponentToShow === 'Reviews'){

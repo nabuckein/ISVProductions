@@ -9,7 +9,7 @@ class ReviewsAccepted extends Component {
     render() {
 	      	return (
 		 		<div className="row col-md-12 text-center">		      		
-		      		 <p className="reviewParagraph"> {this.props.reviewText}</p>		
+		      		 <p className="reviewParagraph">{this.props.reviewText}</p><span> by {this.props.reviewUser}</span>		
 	      		</div>
 	    	);
 	    
