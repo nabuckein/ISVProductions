@@ -22,9 +22,11 @@
   justify-content: space-between;
   margin-top: 50px; }
 
-.reviewParagraph {
+.reviewParagraphDiv {
   border-top: solid 1px white;
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px white; }
+
+.reviewParagraph {
   font-family: 'Farsan'; }
 
 .submitReviewParagraph, .SubmitReviewDoneParagraphs {

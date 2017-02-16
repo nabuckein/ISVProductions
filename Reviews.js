@@ -87,7 +87,7 @@ class Reviews extends Component {
 
     	for (var n=0; n <= this.state.reviewText.length-1; n++){
     		if (acceptedReviewsArray[n] !== false){
-    			reviewsToShow.push(<ReviewsAccepted key={n} reviewText={this.state.reviewText[n]} reviewUser={this.state.reviewUser[n]}/>);
+    			reviewsToShow.push(<ReviewsAccepted key={n} odd={n} reviewText={this.state.reviewText[n]} reviewUser={this.state.reviewUser[n]}/>);
     		}
     	}
     	//acceptedReviewsArray = []; // Need because REVIEW component is being updated when clicking on submit, done, and cancel buttons
